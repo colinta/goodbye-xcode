@@ -1,0 +1,34 @@
+                                          slide 09 - methods available from Teacup::Layout module
+
+    Teacup::Layout module
+
+-----------------------------------------
+
+    - `Teacup::Layout` module can be included in *any* class.
+
+    Adds these methods:
+    - `layout(view)` applies styles, accepts a block.
+      Calls to `subview` within that block are added to this view.
+    - `subview()` adds a view.
+      Targets the `top_level_view` method or the current view (from `layout`)
+      Passes the view to `layout` for styling and more views.
+    - `stylesheet` property
+      Often "inherited" from the `nextResponder`
+    - `stylename` property
+
+--------------
+
+    # a UITableView DataSource helper class; does not extend UIView or
+    # UIViewController, so teacup methods are not available (yet)
+    def TableDataSource
+      include Teacup::Layout
+
+      def tableView(table_view, cellForRowAtIndexPath:index_path)
+        cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: 'cell')
+
+        layout(cell.contentView) do
+          subview(label)
+          # ...
+        end
+      end
+    end

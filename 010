@@ -1,0 +1,23 @@
+                                          slide 10 - extensions to UIKit classes
+
+    UIView and UIViewController Extensions
+
+-----------------------------------------
+
+  (other than `include Teacup::Layout`)
+
+  *UIView*
+    - `stylesheet` is inherited from
+      the `nextResponder` (view or view controller)
+    - `style` applies a hash of styles directly to the view (one-shot)
+    - `restyle!` fetches styles from stylesheet and re-applies.
+      takes orientation into account (called automatically most of the time)
+    - `animate_to_stylename` changes the stylename, restyles, and
+      animates those changes
+    - `animate_to_style` one shot changes, like `style`
+
+  *UIViewController*
+    - class `stylesheet` method
+      stores the stylesheet name. Applied in `viewDidLoad`
+    - class `layout` method
+      stores the view hiearchy. Applied in `viewDidLoad`

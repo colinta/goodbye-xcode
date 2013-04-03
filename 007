@@ -1,0 +1,11 @@
+                                          slide 07 - information about stylesheets
+
+    Stylesheets
+
+-----------------------------------------
+
+    - Calls UI-related setter methods on UIView
+    - Import other stylesheets
+    - Easy to create styling DSLs (AutoLayout is just one)
+    - Styles are applied by stylename or UIView class
+    - Handlers convert arguments or rename methods

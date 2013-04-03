@@ -1,0 +1,14 @@
+                                          slide 04 - core teacup features
+
+    What's teacup gonna do for ME!?
+
+-----------------------------------------
+
+    In other words:
+
+      - calls `addSubview`
+      - calls `setter` methods
+
+    And that's pretty much it!
+
+    (except for the complicated parts)

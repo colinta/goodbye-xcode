@@ -1,0 +1,575 @@
+- clear: 0
+- set_syntax: 'Packages/Text/Plain text.tmLanguage'
+- goto: [4, 14]
+- write_lines:
+    - 'Goodbye, Xcode!'
+- goto: [5, 14]
+- delay: 500
+- write_lines:
+    - '~~~~~~~~~~~~~~~'
+- goto: [6, 14]
+- delay: 100
+- write_lines:
+    - ' Hello, Teacup'
+- delay: 1000
+- goto: [12, 32]
+- write_lines:
+    - 'colin t.a. gray'
+    - '       @colinta'
+- goto: [0, 0]
+
+
+- clear: 0
+- goto: [1, 4]
+- write:
+    delay_min: 25
+    delay_max: 50
+    write: "What's teacup gonna do for ME!?"
+- goto: [3, 0]
+- write:
+    delay_min: 10
+    delay_max: 10
+    write: "-----------------------------------------"
+
+- goto: [5, 4]
+- write_lines:
+    - 'Goal:'
+    - ''
+    - '  Make creating UIKit interfaces'
+    - '  programmatically [mostly] painless'
+
+- clear_lines: [5, -1]
+- goto: [5, 3]
+- write_lines:
+  - " Layouts"
+  - " -------"
+  - "Create and organize your"
+  - "view hierarchy using the"
+  - "`layout` and `subview`"
+  - "methods."
+
+- goto: [5, 32]
+- write_lines:
+  - " Styles"
+  - " ------"
+  - "Apply styling to views by"
+  - "moving view-related methods"
+  - "into “stylesheets”."
+
+- clear_lines: [5, -1]
+- goto: [5, 4]
+- write: "In other words:"
+- goto: [7, 6]
+- write: "- calls `addSubview`"
+- goto: [8, 6]
+- write: "- calls `setter` methods"
+- goto: [10, 4]
+- write: "And that's pretty much it!"
+
+- goto: [12, 4]
+- write: "(except for the complicated parts)"
+
+- clear_lines: [5, -1]
+- goto: [5, 4]
+- write: 'Other features:'
+- goto: [ 7, 6]
+- write: '- Can apply orientation-specific styles'
+- goto: [ 8, 6]
+- write: '- Stylesheet syntax can be extended to support shorthands'
+- goto: [ 9, 6]
+- write: '  or custom properties'
+- goto: [10, 6]
+- write: '- Can be extended by adding methods to `Stylesheet` or by'
+- goto: [11, 6]
+- write: '  writing handlers'
+
+- clear: 0
+- goto: [1, 4]
+- write:
+    delay_min: 25
+    delay_max: 50
+    write: "Layouts"
+- goto: [3, 0]
+- write:
+    delay_min: 10
+    delay_max: 10
+    write: "-----------------------------------------"
+- insert_at: [7, 12, 'D E M O']
+
+- clear: 0
+- set_syntax: 'Packages/User/MacRuby.tmbundle/Syntaxes/MacRuby.tmLanguage'
+- write:
+  - ''
+  - 'class MainMenuController < UIViewController'
+  - ''
+  - '  # classic CocoaTouch'
+  - '  def viewDidLoad'
+  - '    @header = UILabel.new'
+  - '    @header.text = "Main Menu"'
+  - '    @header.font = UIFont.systemFontOfSize(UIFont.labelFontSize)'
+  - '    @header.textColor = UIColor.whiteColor'
+  - '    self.view.addSubview(@header)'
+  - '  end'
+  - ''
+  - 'end'
+
+- goto: [3, 2]
+- select_eol
+- write: '# using a layout block (UIViewController method)'
+
+- goto: [4, 2]
+- select_eol
+- write: 'layout do'
+
+- goto: [3, 2]
+- select_eol
+- write: '# using `subview` to add the view'
+
+- goto: [9, 4]
+- select_delta: 20
+- write: 'subview'
+
+- goto: [3, 2]
+- select_eol
+- write: '# apply the “styles” using Teacup'
+
+- goto: [9, 0]
+- select_eol
+- select_delta: 1
+- delay: 250
+- delete
+#
+- goto: [5, 14]
+- write: 'subview('
+- go: 7
+- select_eol
+- delay: 250
+- delete
+- write: ','
+#
+- delay: 250
+- goto: [6, 4]
+- select_next: '@header.'
+- delay: 250
+- delete
+- write: '  '
+- select_next: ' = '
+- write: ': '
+- goto_eol
+- write: ','
+#
+- delay: 250
+- goto: [7, 4]
+- select_next: '@header.'
+- delay: 250
+- delete
+- write: '  '
+- select_next: ' = '
+- write: ': '
+- goto_eol
+- write: ','
+#
+- delay: 250
+- goto: [7, 4]
+- select_next: '@header.'
+- delay: 250
+- delete
+- write: '  '
+- select_next: ' = '
+- write: ': '
+- goto_eol
+- write: ','
+#
+- delay: 250
+- write: "\n      )"
+
+- goto: [3, 2]
+- select_eol
+- write: '# apply styles using a stylesheet'
+
+- delay: 250
+- goto: [2, 0]
+- write: "\n  stylesheet :main_menu\n"
+- select_lines: [8, 10]
+- delay: 250
+- delete
+- goto: [7, 29]
+- select_delta: 8
+- delete
+- delay: 250
+- write: ', :header'
+
+- clear
+- set_syntax: 'Packages/Text/Plain text.tmLanguage'
+- goto: [1, 4]
+- write:
+    delay_min: 25
+    delay_max: 50
+    write: "Stylesheets"
+- goto: [3, 0]
+- write:
+    delay_min: 10
+    delay_max: 10
+    write: "-----------------------------------------"
+
+- goto: [5, 6]
+- write: '- Calls UI-related setter methods on UIView'
+- goto: [6, 6]
+- write: '- Import other stylesheets'
+- goto: [7, 6]
+- write: '- Easy to create styling DSLs (AutoLayout is just one)'
+- goto: [8, 6]
+- write: '- Styles are applied by stylename or UIView class'
+- goto: [9, 6]
+- write: '- Handlers convert arguments or rename methods'
+
+- clear: 0
+- set_syntax: 'Packages/User/MacRuby.tmbundle/Syntaxes/MacRuby.tmLanguage'
+- write:
+  - ''
+  - 'Teacup::Stylesheet.new :main_menu do'
+  - 'end'
+
+- goto: [2, 0]
+- write: "\n\n\n"
+- goto: [3, 2]
+- write:
+  - 'style :header, text: "Main Menu"'
+- delay: 250
+- goto: [4, 2]
+- write:
+  - '    # => setText("Main Menu")'
+
+- goto: [4, 0]
+- select_eol
+- delete
+- goto: [3, 16]
+- select_delta: 1
+- delete
+- write: "\n    "
+- goto_eol
+- write: ",\n"
+- goto: [5, 4]
+- write: "font: UIFont.systemFontOfSize(UIFont.labelFontSize),\n"
+- goto: [6, 4]
+- write: 'textColor: UIColor.whiteColor'
+
+- select_lines: [5, 5]
+- delay: 500
+- delete
+- goto: [3, 0]
+- write: "\n"
+- goto: [3, 0]
+- write:
+  - "  style UILabel,"
+  - "    font: UIFont.systemFontOfSize(UIFont.labelFontSize)"
+
+- select_lines: [8, 8]
+- delay: 500
+- delete
+- go: -2
+- select_delta: 1
+- delay: 250
+- delete
+
+- goto: [5, 0]
+- write:
+  - "\n"
+  - "  style :white_label,"
+  - "    textColor: UIColor.whiteColor"
+- delay: 500
+- goto: [9, 16]
+- write: ' extends: :white_label,'
+
+- select_lines: [3, 5]
+- delete: 250
+- delete
+- goto: [0, 0]
+- write:
+    - "Teacup::Stylesheet.new :root do"
+    - "  style UILabel,"
+    - "    font: UIFont.systemFontOfSize(UIFont.labelFontSize)"
+    - "end"
+- delay: 500
+- goto: [6, 2]
+- write: "import :root\n"
+
+- clear: 0
+- write_lines:
+  - '# using teacup'
+  - 'Teacup::Stylesheet.new :root do'
+  - '  style UILabel,'
+  - '    font: UIFont.systemFontOfSize(UIFont.labelFontSize)'
+  - 'end'
+  - ''
+  - 'Teacup::Stylesheet.new :main_menu do'
+  - '  import :root'
+  - ''
+  - '  style :white_label,'
+  - '    textColor: UIColor.whiteColor'
+  - ''
+  - '  style :header, extends: :white_label'
+  - '    text: "Main Menu"'
+  - ''
+  - 'end'
+
+- write_lines:
+  - '# using sweettea (teacup + sugarcube)'
+  - 'Teacup::Stylesheet.new :root do'
+  - '  style UILabel,'
+  - '    font: :label                                       '
+  - 'end'
+  - ''
+  - 'Teacup::Stylesheet.new :main_menu do'
+  - '  import :root'
+  - ''
+  - '  style :white_label,'
+  - '    color: :white                '
+  - ''
+  - '  style :header, extends: :white_label'
+  - '    text: "Main Menu"'
+  - ''
+  - 'end'
+
+- write_lines:
+  - '# using teacup again                 '
+  - 'Teacup::Stylesheet.new :root do'
+  - '  style UILabel,'
+  - '    font: UIFont.systemFontOfSize(UIFont.labelFontSize)'
+  - 'end'
+  - ''
+  - 'Teacup::Stylesheet.new :main_menu do'
+  - '  import :root'
+  - ''
+  - '  style :white_label,'
+  - '    textColor: UIColor.whiteColor'
+  - ''
+  - '  style :header, extends: :white_label'
+  - '    text: "Main Menu"'
+  - ''
+  - 'end'
+
+- write_lines:
+  - '# using sweettea again'
+  - 'Teacup::Stylesheet.new :root do'
+  - '  style UILabel,'
+  - '    font: :label                                       '
+  - 'end'
+  - ''
+  - 'Teacup::Stylesheet.new :main_menu do'
+  - '  import :root'
+  - ''
+  - '  style :white_label,'
+  - '    color: :white                '
+  - ''
+  - '  style :header, extends: :white_label'
+  - '    text: "Main Menu"'
+  - ''
+  - 'end'
+
+- clear: 0
+- set_syntax: 'Packages/Text/Plain text.tmLanguage'
+- goto: [1, 4]
+- write:
+    delay_min: 25
+    delay_max: 50
+    write: "Teacup::Layout module"
+- goto: [3, 0]
+- write:
+    delay_min: 10
+    delay_max: 10
+    write: "-----------------------------------------"
+- goto: [5, 4]
+- write_lines:
+    - '`Teacup::Layout` module can be included in *any* class.'
+
+- goto: [7, 4]
+- write_lines:
+    - 'Adds these methods:'
+
+- goto: [8, 4]
+- write_lines:
+    - '- `layout(view)` applies styles, accepts a block.'
+    - '  Calls to `subview` within that block are added to this view.'
+
+- goto: [10, 4]
+- write_lines:
+    - '- `subview()` adds a view. Targets the `top_level_view`'
+    - '  method or the current view (from `layout`)'
+    - '  Passes the view to `layout` for styling and more views.'
+
+- goto: [13, 4]
+- write_lines:
+    - '- `stylesheet` property'
+    - '  Often "inherited" from the `nextResponder`'
+
+- goto: [15, 4]
+- write_lines:
+    - '- `stylename` property'
+
+- clear: 0
+- set_syntax: 'Packages/User/MacRuby.tmbundle/Syntaxes/MacRuby.tmLanguage'
+- write:
+  - ''
+  - 'def TableDataSource'
+  - '  include Teacup::Layout'
+  - ''
+  - '  def tableView(table_view, cellForRowAtIndexPath:index_path)'
+  - '    cell = UITableViewCell.alloc.initWithStyle(UITableViewCellStyleDefault,'
+  - '                               reuseIdentifier: "cell")'
+  - ''
+  - '    layout(cell.contentView) do'
+  - '      subview(label)'
+  - '      # ...'
+  - '    end'
+  - '  end'
+  - 'end'
+
+- clear: 0
+- set_syntax: 'Packages/Text/Plain text.tmLanguage'
+- goto: [1, 4]
+- write:
+    delay_min: 25
+    delay_max: 50
+    write: "UIView and UIViewController Extensions"
+- goto: [3, 0]
+- write:
+    delay_min: 10
+    delay_max: 10
+    write: "-----------------------------------------"
+- goto: [5, 4]
+- write_lines:
+  - '(other than `include Teacup::Layout`)'
+
+- goto: [7, 4]
+- write_lines:
+    - '*UIView*'
+    - '  - `stylesheet` is inherited from'
+    - '    the `nextResponder` (view or view controller)'
+    - '  - `style` applies a hash of styles directly to the view'
+    - '  - `restyle!` fetches styles from stylesheet and re-applies.'
+    - '    takes orientation into account'
+    - '  - `animate_to_stylename` changes the stylename, restyles,'
+    - '    and animates those changes'
+    - '  - `animate_to_style` one shot changes, like `style`'
+
+- goto: [12, 39]
+- write: '(called automatically)'
+
+- goto: [12, 40]
+- select_delta: 20
+- delete
+- write: 'most of the time'
+
+- select_lines: [7, 15]
+- delay: 250
+- delete
+- goto: [7, 4]
+- write_lines:
+    - '*UIViewController*'
+    - '  - class `stylesheet` method'
+    - '    stores the stylesheet name. Applied in `viewDidLoad`'
+    - '  - class `layout` method'
+    - '    stores the view hiearchy. Applied in `viewDidLoad`'
+
+- clear: 0
+- goto: [1, 4]
+- write:
+    delay_min: 25
+    delay_max: 50
+    write: "Features I would love to see..."
+- goto: [3, 0]
+- write:
+    delay_min: 10
+    delay_max: 10
+    write: "-----------------------------------------"
+
+- goto: [5, 4]
+- write:
+    - '- Tapping into UIAppearance'
+
+- goto: [6, 4]
+- write:
+    - '- Stylesheet packages (bootstrap for iOS)'
+
+- goto: [7, 4]
+- write:
+    - '- Multiple stylenames, or add styleclasses (composability)'
+
+- goto: [8, 4]
+- write: 'Or how about...'
+
+- goto: [9, 4]
+- write_lines:
+    - "- A development environment that provides"
+    - "  debugging information, UI manipulation,"
+    - "  and accessibility information.  Pluggable,"
+    - "  too, so that it's easy to add per-app plugins"
+
+- clear: 0
+- goto: [2, 3]
+- write_lines:
+  - 'XX   XX'
+  - ' XX XX'
+  - ' XX XX'
+  - '  XXX    RR  AAA'
+  - ' XX XX  RR     AA YY  YY'
+  - ' XX XX  RR   AAAA YY  YY'
+  - 'XX   XX RR  AA AA  YY YY'
+  - 'XX   XX RR   AAAA   YYY'
+  - '                    YY'
+  - 'YYYYYYYYYYYYYYYYYYYYY'
+- delay: 250
+- goto: [2, 3]
+- write_lines:
+  - 'XX   XX'
+  - ' XX XX'
+  - ' XX XX'
+  - '  XXX     RR   AAA'
+  - ' XX XX   RR      AA  YY  YY'
+  - ' XX XX   RR    AAAA  YY  YY'
+  - 'XX   XX  RR   AA AA   YY YY'
+  - 'XX   XX  RR    AAAA    YYY'
+  - '                       YY'
+  - 'YYYYYYYYYYYYYYYYYYYYYYYY'
+- delay: 250
+- goto: [2, 3]
+- write_lines:
+  - 'XX   XX'
+  - ' XX XX'
+  - ' XX XX'
+  - '  XXX      RR    AAA'
+  - ' XX XX    RR       AA   YY  YY'
+  - ' XX XX    RR     AAAA   YY  YY'
+  - 'XX   XX   RR    AA AA    YY YY'
+  - 'XX   XX   RR     AAAA     YYY'
+  - '                          YY'
+  - 'YYYYYYYYYYYYYYYYYYYYYYYYYYY'
+- delay: 250
+- goto: [2, 3]
+- write_lines:
+  - 'XX   XX'
+  - ' XX XX'
+  - ' XX XX'
+  - '  XXX       RR     AAA'
+  - ' XX XX     RR        AA    YY  YY'
+  - ' XX XX     RR      AAAA    YY  YY'
+  - 'XX   XX    RR     AA AA     YY YY'
+  - 'XX   XX    RR      AAAA      YYY'
+  - '                             YY'
+  - 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
+- delay: 250
+- goto: [2, 3]
+- write_lines:
+  - 'XX   XX'
+  - ' XX XX'
+  - ' XX XX'
+  - '  XXX        RR      AAA'
+  - ' XX XX      RR         AA     YY  YY'
+  - ' XX XX      RR       AAAA     YY  YY'
+  - 'XX   XX     RR      AA AA      YY YY'
+  - 'XX   XX     RR       AAAA       YYY'
+  - '                                YY'
+  - 'YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'
+
+- clear: 0

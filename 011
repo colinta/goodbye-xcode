@@ -1,0 +1,16 @@
+                                          slide 11 - desired features
+
+    Features I would love to see...
+
+-----------------------------------------
+
+    - Tapping into UIAppearance
+    - Some stylesheet packages (bootstrap for iOS)
+    - Support multiple stylenames, or add styleclasses (composability)
+    Or how about...
+    - A development environment that provides
+      debugging information, UI manipulation,
+      and accessibility information.  Pluggable,
+      too, so that it's easy to add per-app plugins
+
+    PRESENTING XRAY (formerly known as Kiln)

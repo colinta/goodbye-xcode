@@ -1,0 +1,97 @@
+                                          slide 08 - Stylesheet demo code
+
+    Stylesheets
+
+-----------------------------------------
+
+    DEMO
+
+---------------
+
+    Teacup::Stylesheet.new :main_menu do
+    end
+
+---------------
+
+    # assign the text to the :header view
+    Teacup::Stylesheet.new :main_menu do
+
+      style :header, text: 'Main Menu'
+          # => setText('Main Menu')
+    end
+
+---------------
+
+    # add other styles: `setFont` and `setTextColor`
+    Teacup::Stylesheet.new :main_menu do
+
+      style :header,
+        text: 'Main Menu',
+        font: UIFont.systemFontOfSize(UIFont.labelFontSize),
+        textColor: UIColor.whiteColor
+    end
+
+---------------
+
+    # move the font into a UILabel style (all UILabels get this style)
+    Teacup::Stylesheet.new :main_menu do
+
+      style UILabel,
+        font: UIFont.systemFontOfSize(UIFont.labelFontSize)
+
+      style :header,
+        text: 'Main Menu',
+        textColor: UIColor.whiteColor
+    end
+
+---------------
+
+    # move the UILabel styling into another stylesheet and import it
+    Teacup::Stylesheet.new :root do
+      style UILabel,
+        font: UIFont.systemFontOfSize(UIFont.labelFontSize)
+    end
+
+    Teacup::Stylesheet.new :main_menu do
+      import :root
+
+      style :header,
+        text: 'Main Menu',
+        textColor: UIColor.whiteColor
+    end
+
+---------------
+
+    # create a :white_label style and extend it in :header
+    Teacup::Stylesheet.new :root do
+      style UILabel,
+        font: UIFont.systemFontOfSize(UIFont.labelFontSize)
+    end
+
+    Teacup::Stylesheet.new :main_menu do
+      import :root
+
+      style :white_label,
+        textColor: UIColor.whiteColor
+
+      style :header, extends: :white_label
+        text: 'Main Menu'
+    end
+
+---------------
+
+    # use sweettea to have a shorter, more CSS like syntax
+    Teacup::Stylesheet.new :root do
+      style UILabel,
+        font: :label
+    end
+
+    Teacup::Stylesheet.new :main_menu do
+      import :root
+
+      style :white_label,
+        color: :white
+
+      style :header, extends: :white_label
+        text: 'Main Menu'
+    end

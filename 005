@@ -1,0 +1,13 @@
+                                          slide 05 - miscellaneous teacup features
+
+    What's teacup gonna do for ME!?
+
+-----------------------------------------
+
+    Other features:
+
+    - Can apply orientation-specific styles
+    - Stylesheet syntax can be extended to support shorthands
+      or custom properties
+    - Can be extended by adding methods to `Stylesheet` or by
+      write handlers

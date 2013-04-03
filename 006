@@ -1,0 +1,76 @@
+                                          slide 06 - layout demo code
+
+    Layouts
+
+-----------------------------------------
+
+    DEMO
+
+---------------
+
+    class MainMenuController < UIViewController
+
+      # classic CocoaTouch
+      def viewDidLoad
+        @header = UILabel.new
+        @header.text = 'Main Menu'
+        @header.font = UIFont.systemFontOfSize(UIFont.labelFontSize)
+        @header.textColor = UIColor.whiteColor
+        self.view.addSubview(@header)
+      end
+
+    end
+
+---------------
+    class MainMenuController < UIViewController
+
+      # using a layout block (UIViewController method)
+      layout do
+        @header = UILabel.new
+        @header.text = 'Main Menu'
+        @header.font = UIFont.systemFontOfSize(UIFont.labelFontSize)
+        @header.textColor = UIColor.whiteColor
+        self.view.addSubview(@header)
+      end
+
+    end
+
+---------------
+    class MainMenuController < UIViewController
+
+      # using `subview` to add the view
+      layout do
+        @header = UILabel.new
+        @header.text = 'Main Menu'
+        @header.font = UIFont.systemFontOfSize(UIFont.labelFontSize)
+        @header.textColor = UIColor.whiteColor
+        subview(@header)
+      end
+
+    end
+
+---------------
+    class MainMenuController < UIViewController
+
+      # apply the “styles” using Teacup
+      layout do
+        @header = subview(UILabel,
+          text: 'Main Menu',
+          font: UIFont.systemFontOfSize(UIFont.labelFontSize),
+          textColor: UIColor.whiteColor,
+          )
+      end
+
+    end
+
+---------------
+    class MainMenuController < UIViewController
+
+      stylesheet :main_menu
+
+      # apply styles using a stylesheet
+      layout do
+        @header = subview(UILabel, :header)
+      end
+
+    end

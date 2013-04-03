@@ -1,0 +1,12 @@
+                                          slide 03 - about teacup
+
+    What's teacup gonna do for ME!?
+
+-----------------------------------------
+
+    Layouts                          Styles
+    -------                          ------
+   Create and organize your         Apply styling to views by
+   view hierarchy using the         moving view-related methods
+   `layout` and `subview`           into “stylesheets”.
+   methods.
